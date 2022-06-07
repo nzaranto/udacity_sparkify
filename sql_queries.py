@@ -10,7 +10,7 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays(
                                 songplay_id serial PRIMARY KEY,
-                                start_time bigint NOT NULL,  
+                                start_time timestamp NOT NULL,  
                                 user_id int NOT NULL, 
                                 level varchar,
                                 song_id varchar, 
@@ -93,5 +93,5 @@ song_select =   ("""SELECT s.song_id, a.artist_id
 
 # QUERY LISTS
 
-create_table_queries = [artist_table_create, user_table_create, song_table_create, time_table_create,songplay_table_create]
+create_table_queries = [songplay_table_create, user_table_create, song_table_create, artist_table_create, time_table_create]
 drop_table_queries = [songplay_table_drop, user_table_drop, song_table_drop, artist_table_drop, time_table_drop]
